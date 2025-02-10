@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #000408;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header .nav {
+  border: solid 0.1px #DAC5A7;
+  border-radius: 50px;
+  color: #DAC5A7;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  background: transparent;
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  position: fixed;
+  width: 90%;
+  top: 0;
+  margin: 20px 0;
+  padding: 10px 20px;
+}
+header .nav .menu {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-left: 50%;
+}
+header .nav h1 {
+  opacity: 0.9;
+  border-bottom: #DAC5A7;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header .nav h1:hover {
+  transform: rotate(-5deg);
+}
+header .nav a {
+  text-decoration: none;
+  color: #DAC5A7;
+  display: none;
+}
+header .nav .talk {
+  background-color: #DAC5A7;
+  color: black;
+}
+
+.view-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.view-1 img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.view-1 h1 {
+  font-size: 3.2rem;
+  color: #DAC5A7;
+  text-align: center;
+  font-weight: 100;
+  line-height: 1;
+}
+.view-1 p {
+  color: #DAC5A7;
+  text-align: center;
+  font-weight: 100;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  opacity: 0.6;
+}
+.view-1 p br {
+  display: none;
+}
+
+.view-2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.view-2 .marquee {
+  display: flex;
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+  border: #000408;
+}
+.view-2 .marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15%;
+  background: linear-gradient(to right, #000408, transparent);
+}
+.view-2 .marquee::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 15%;
+  background: linear-gradient(to left, #000408, transparent);
+  z-index: 1;
+}
+.view-2 .marquee .logo {
+  display: flex;
+  justify-content: space-between;
+  animation: marquee 10s linear infinite both;
+}
+.view-2 .marquee .logo img {
+  width: 40px;
+  margin-left: 50px;
+}
+
+main {
+  width: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media (min-width: 1020px) {
+  html {
+    font-size: clamp(16px, 1vw, 22px);
+  }
+  header .nav {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  header .nav .menu {
+    margin-left: 0;
+  }
+  header .nav a {
+    display: block;
+  }
+  .view-1 img {
+    width: 57%;
+  }
+  .view-1 h1 {
+    font-size: 7.5rem;
+  }
+  .view-1 p {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+  }
+  .view-1 p br {
+    display: block;
+  }
+  .view-2 .marquee {
+    width: 60%;
+  }
+  .view-2 .marquee .logo img {
+    margin-right: 60px;
+  }
+}/*# sourceMappingURL=portfolio.css.map */
